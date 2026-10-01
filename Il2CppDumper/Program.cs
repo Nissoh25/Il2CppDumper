@@ -224,7 +224,8 @@ namespace Il2CppDumper
                 }
                 if (!flag)
                 {
-                    flag = il2Cpp.SymbolSearch();
+                    try { flag = il2Cpp.SymbolSearch(); }
+                    catch { Console.WriteLine("SymbolSearch failed, falling back to manual."); }
                 }
                 if (!flag)
                 {
